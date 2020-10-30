@@ -9,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Get kubectl
-        uses: steebchen/kubectl@master
+        uses: azure/setup-kubectl@v1
      - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
       - name: Terraform deploy
