@@ -12,6 +12,9 @@ jobs:
         uses: azure/setup-kubectl@v1
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v1
+      - name: Terraform Init
+        id: init
+        run: terraform init
       - name: Terraform deploy
         id: deploy
         run: terraform apply -auto-approve
