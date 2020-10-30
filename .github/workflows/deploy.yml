@@ -11,9 +11,9 @@ jobs:
       - uses: azure/setup-kubectl@v1
       - name: Setup Terraform
           uses: hashicorp/setup-terraform@v1
-        - name: Terraform deploy
-          id: deploy
-          run: terraform apply -auto-approve
-          env:
-            TF_VAR_digitalocean_token: ${{ secrets.DIGITALOCEAN_TOKEN }}
-            TF_VAR_circleci_token: ${{ secrets.CIRCLECI_TOKEN }}
+      - name: Terraform deploy
+        id: deploy
+        run: terraform apply -auto-approve
+        env:
+          TF_VAR_digitalocean_token: ${{ secrets.DIGITALOCEAN_TOKEN }}
+          TF_VAR_circleci_token: ${{ secrets.CIRCLECI_TOKEN }}
