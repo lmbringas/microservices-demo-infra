@@ -8,13 +8,12 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Get kubectl
-        uses: azure/setup-kubectl@v1
-     - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
-      - name: Terraform deploy
-        id: deploy
-        run: terraform apply -auto-approve
-        env:
-          TF_VAR_digitalocean_token: ${{ secrets.DIGITALOCEAN_TOKEN }}
-          TF_VAR_circleci_token: ${{ secrets.CIRCLECI_TOKEN }}
+      - uses: azure/setup-kubectl@v1
+      - name: Setup Terraform
+          uses: hashicorp/setup-terraform@v1
+        - name: Terraform deploy
+          id: deploy
+          run: terraform apply -auto-approve
+          env:
+            TF_VAR_digitalocean_token: ${{ secrets.DIGITALOCEAN_TOKEN }}
+            TF_VAR_circleci_token: ${{ secrets.CIRCLECI_TOKEN }}
