@@ -22,4 +22,6 @@ jobs:
       - name: Terraform plan
         id: plan
         run: terraform plan
-      
+        env:
+          TF_VAR_digitalocean_token: ${{ secrets.DIGITALOCEAN_TOKEN }}
+          TF_VAR_circleci_token: ${{ secrets.CIRCLECI_TOKEN }}
