@@ -1,5 +1,11 @@
 variable "digitalocean_token" {}
 
+variable "loadbalancer_name" {
+  description = "Loadbalancer name"
+  default     = "loadbalancer-1"
+  type        = string
+}
+
 variable "cluster_name" {
   description = "Cluster name"
   default     = "prod"

@@ -18,7 +18,7 @@ resource "kubernetes_namespace" "shop_namespace" {
 }
 
 resource "digitalocean_loadbalancer" "public" {
-  name   = "loadbalancer-1"
+  name   = var.loadbalancer_name
   region = "nyc1"
 
   forwarding_rule {
@@ -34,7 +34,7 @@ resource "digitalocean_loadbalancer" "public" {
     protocol = "tcp"
   }
 
-  droplet_tag = "prod-nodes"
+  droplet_tag = var.cluster_nodes_name
 }
 
 resource "local_file" "kubernetes_config" {
