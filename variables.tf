@@ -1,7 +1,5 @@
 variable "digitalocean_token" {}
 
-variable "circleci_token" {}
-
 variable "cluster_name" {
   description = "Cluster name"
   default     = "prod"
