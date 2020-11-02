@@ -1,9 +1,5 @@
 terraform {
   required_providers {
-    circleci = {
-      source  = "mrolla/circleci"
-      version = "0.4.0"
-    }
     digitalocean = {
       source = "digitalocean/digitalocean"
     }
